@@ -1,0 +1,15 @@
+{% extends "admin_panel/base.html" %}
+{% block content %}
+    {% for new in news %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" >
+          <div class="media-body">
+            <div class="article-metadata">
+              <small class="text-muted">{{ new.date | date:"F d, Y"}}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'news-detail' new.id %}">{{ new.label }}</a></h2>
+            <p class="article-content">{{ new.url }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
