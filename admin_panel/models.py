@@ -11,7 +11,7 @@ class PressContent(models.Model):
     modified = models.DateTimeField('date_updated', auto_now=True)
 
     def __str__(self):
-        return self.url
+        return '%s %s' % (self.label, self.date)
     
     def get_absolute_url(self):
         return reverse('news-detail', kwargs={'pk':self.pk}) 
