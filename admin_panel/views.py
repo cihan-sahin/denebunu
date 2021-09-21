@@ -35,3 +35,7 @@ class PressContentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView
     model = PressContent
     success_url = '/'
 
+    def test_func(self):
+        post = self.get_object()
+        return True
+
